@@ -1,0 +1,58 @@
+optimizer : {
+  type: Adam,
+  kwargs: {
+    lr : 0.0001,
+    betas : [0.9,0.999],
+    eps: 0.000001
+}}
+
+scheduler: {
+  type: CosLR,
+  kwargs: {
+    epochs: 250,
+    initial_epochs : 10
+}}
+
+
+#trainer
+start_epoch: 0
+epochs: 250
+model: TextAlignPCModel
+
+batch_size: 32 # 128 64 32
+disable_amp: store_true 
+# update_freq: 2  # 1  2  4
+print_freq: 10
+warmup_epochs: 1
+wandb: store_true
+#Shapenet Data
+radius: 0.5
+normalization: UnitBall
+shapenet13: True
+SVR: True
+
+class_choice: ["airplane"] 
+number_points: 2048
+number_points_eval: 2048
+random_rotation: False
+data_augmentation_axis_rotation: False
+data_augmentation_random_flips: False
+random_translation: False
+anisotropic_scaling: False
+demo: False
+sample: True
+workers: 8
+
+# path
+dir_outpath: Path/dir_log/
+dir_checkpoints: None
+output_dir: Path/dir_out/
+clip_ckpt_path: Path/checkpoints/ViT-B-16.pt
+ulip_ckpt_path: Path/checkpoints/pretrained_models_ckpt_zero-sho_classification_checkpoint_pointbert.pt
+
+ulip: Path/configs/Ulip.yaml
+
+pointcloud_path: Path/ShapeNetV1PointCloud/
+image_path: Path/ShapeNetV1Renderings/
+cache_path: Path/Cache/
+cache_path_test: Path/Cachetest/

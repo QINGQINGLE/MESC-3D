@@ -1,0 +1,3 @@
+model: ULIP_PointBERT
+npoints: 2048
+evaluate_3d: store_true

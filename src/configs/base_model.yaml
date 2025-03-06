@@ -1,0 +1,70 @@
+# Adam & scheduler
+optimizer : {
+  type: Adam,
+  kwargs: {
+    lr : 0.001,
+    betas : [0.9,0.999],
+    eps: 0.000001
+}}
+scheduler: {
+  type: CosLR,
+  kwargs: {
+    epochs: 400,
+    initial_epochs : 20
+}}
+# model 
+model_name: BaseModel
+manual_seed: null
+
+model:
+  embed_dim: 32
+  depth: 4
+  out_dim: 32
+  num_heads: 8
+  mlp_ratio: 2.0
+  qkv_bias: False
+  qk_scale: null
+  drop_rate: 0.2
+  attn_drop_rate: 0.2
+  drop_path_rate: 0.2
+  num_points: 2048
+  dec_dim: [768,512,256,128,64,32]
+  yaml: Path/configs/finetune_modelnet.yaml
+
+# batch
+batch_size: 24
+start_epoch: 0
+nepoch: 400
+epoch_interval_to_save: 5
+epoch_interval_to_val: 1
+
+# gpus
+distributed: True
+gpus: [0,1]
+# SVR Data
+radius: 0.5
+normalization: UnitBall
+shapenet13: True
+SVR: True
+class_choice: ["airplane"] 
+number_points: 2048
+number_points_eval: 2048
+random_rotation: False
+data_augmentation_axis_rotation: False
+data_augmentation_random_flips: False
+random_translation: False
+anisotropic_scaling: False
+demo: False
+sample: True
+workers: 8
+
+# path
+taxonomy_path: Path/dataset_svr/taxonomy.json
+dir_outpath: Path/log_dir
+
+ckpt_path: path/ckpt_path/base_model.pth
+
+pointcloud_path: Path/ShapeNetV1PointCloud/
+image_path: Path/ShapeNetV1Renderings/
+cache_path: Path/Cache/
+cache_path_test: Path/Cachetest/
