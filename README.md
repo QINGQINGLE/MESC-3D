@@ -15,14 +15,14 @@
 </p>
 <p align="center"><strong>(* Equal Contribution)</strong></p> -->
 <!-- <h3 align="center"><a href="https://arxiv.org/abs/2404.06851">Paper</a> | <a href="https://weiqi-zhang.github.io/UDiFF/">Project Page</a></h3> -->
-<h3 align="center"><a href="https://github/QINGQINGLE">Paper</a></h3>
+<h3 align="center"><a href="https://arxiv.org/abs/2502.20861">Paper</a></h3>
 <div align="center"></div>
 </p>
 <p align="center">
     <img src="figs/mainfig.jpg" width="780" />
 </p>
 
-We release the code of the paper <a href="https://github/QINGQINGLE">MESC-3D:Mining Effective Semantic Cues for 3D Reconstruction from a Single Image</a> in this repository.
+We release the code of the paper <a href="https://arxiv.org/abs/2502.20861">MESC-3D:Mining Effective Semantic Cues for 3D Reconstruction from a Single Image</a> in this repository.
 
 
 ## Abstract
@@ -99,7 +99,17 @@ def encode_text(self, text, token):
     x = text.type(self.dtype) + self.positional_embedding.type(self.dtype)
     ...
 ```
+## Dataset
 
 ## Pre-training
+-ULIP
++3
+-CLIP
+Path/ViT-B-16.pt
+-PointMAE
+modelnet_1k.pth
+## Training 
+
+## Testing
 
 The remaining code is on the way.
