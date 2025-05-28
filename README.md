@@ -101,13 +101,13 @@ def encode_text(self, text, token):
 ```
 ## Dataset
 
-## Pre-training
--ULIP
-+3
--CLIP
-Path/ViT-B-16.pt
--PointMAE
-modelnet_1k.pth
+## Pretrained-model
+
+
+We provide the following pretrained models: BaseModel, ProModel, ULIPModel, etc. Please download them from <a href="https://drive.google.com/drive/folders/1VQ4PXYQP0eQ6uiAeHKQx0QknYfvJRsQM?dmr=1&ec=wgc-drive-globalnav-goto">Google Drive</a>.
+
+
+
 ## Training 
 
 ## Testing
